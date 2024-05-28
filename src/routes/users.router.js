@@ -84,7 +84,7 @@ router.post("/sign-up", async (req, res, next) => {
                 isolationLevel: Prisma.TransactionIsolationLevel.ReadCommitted,
             }
         )
-        return res.status(201).json({ message: "회원가입이 완료되었습니다." })
+        return res.status(201).json({ userId : user.userId ,email: user.email, name:userInfo.name,  role:userInfo.role, createdAt:user.createdAt , updatedAt:user.updatedAt})
     } catch (err) {
         next(err)
     }
@@ -132,7 +132,7 @@ router.post("/sign-in", async (req, res, next) => {
         )
          // authotization 쿠키에 Berer 토큰 형식으로 JWT를 저장합니다.
         res.cookie('authorization', `Bearer ${token}`);
-        return res.status(200).json({ message: "로그인 성공" })
+        return res.status(200).json({ AccessToken : token })
     } catch (err) {
         next(err)
     }
