@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 import LogMiddleware from './middlewares/log.middleware.js';
 import ErrorHandlingMiddleware from './middlewares/error-handling.middleware.js';
 import UsersRouter from './routes/users.router.js';
-import PostsRouter from './routes/posts.router.js';
+import PostsRouter from './routes/apply.router.js';
 import CommentsRouter from './routes/comments.router.js';
 
 
