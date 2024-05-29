@@ -14,7 +14,7 @@ import PostsRouter from './routes/apply.router.js';
 dotenv.config();
 
 const app = express();
-const PORT = 3018;
+const PORT = 3000;
 
 // 비밀 키는 외부에 노출되면 안되겠죠? 그렇기 때문에, .env 파일을 이용해 비밀 키를 관리해야합니다.
 const ACCESS_TOKEN_SECRET_KEY = process.env.ACCESS_TOKEN_SECRET_KEY;

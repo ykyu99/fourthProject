@@ -101,7 +101,7 @@ router.post("/sign-in", async (req, res, next) => {
         if(!email_regex.test(email)){
           return res
           .status(403)
-          .json({ message: "이메일 형식이 올바르지 않습니다.”"})
+          .json({ message: "이메일 형식이 올바르지 않습니다."})
         }
 
         if(!email || !password){
@@ -163,7 +163,7 @@ router.get("/users", authMiddleware, async (req, res, next) => {
 })
 
 /** 사용자 정보 변경 API **/
-router.patch("/users/", authMiddleware, async (req, res, next) => {
+router.patch("/users", authMiddleware, async (req, res, next) => {
     try {
         const { userId } = req.user
         const updatedData = req.body
